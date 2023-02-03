@@ -1,4 +1,4 @@
-// Create the tile layer that will be the background of our map.
+// Map Layers
 var basemap = L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png'", {
   attribution:
     'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
@@ -24,13 +24,13 @@ var baseMaps = {
 var tectonicplates = new L.LayerGroup();
 var earthquakes = new L.LayerGroup();
 
-// Create an overlayMaps object to hold the bikeStations layer.
+// Create layer fpr tectonic plate and earthquakes.
 var overlayMaps = {
   "Tectonic Plates": tectonicplates,
   "Earthquakes": earthquakes
 };
 
-// Create a layer control, and pass it baseMaps and overlayMaps. Add the layer control to the map.
+// Create a layer control, and pass it baseMaps and overlayMaps. Add the layer to the map.
 L.control.layers(baseMaps, overlayMaps, {
   collapsed: true
 }).addTo(map);
